@@ -1,0 +1,196 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body, html{
+    height: 100%;
+    font-family: Arial, sans-serif;
+}
+.container{
+    display: flex;
+    height: 100%;
+    background-color: #0f111a;
+}
+.image-section{
+    flex: 1;
+    overflow: hidden;
+}
+.login-section form{
+    width: 80%;
+    max-width: 300px;
+    display: flex;
+    flex-direction: column;
+}
+.login-section .options{
+display: flex;
+flex-direction: column;
+justify-content: left;
+text-align: left;
+margin-bottom: 1.5rem;
+}
+.login-section .options a{
+   font-size: 0.875rem;
+   color: #bbb;
+   text-decoration: none;
+}
+
+.image-section img{
+    width: 68%;
+    height: 100%;
+    object-fit: cover;
+}
+.login-section{
+    flex: 1;
+    background-color: #0f111a;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    padding: 2rem;
+}
+.login-section h2{
+    width: 80%;
+    max-width: 300px;
+    display: flex;
+    flex-direction: column;
+    
+}
+.login-section input{
+    background-color: #2a2d3a;
+    border: none;
+    padding: 0.75rem 1rem;
+    margin-bottom: 1rem;
+    border-radius: 0.5rem;
+    color: #fff;
+}
+.login-section input ::placeholder{
+    color: #aaa;
+}
+.login-section button{
+    background-color: #2a2d3a;
+    color: white;
+    border: none;
+    padding: 0.75rem 1rem;
+    margin-bottom: 1rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+}
+.login-section button :hover{
+    background-color: #505468;
+}
+
+
+
+
+
+
+
+
+
+
+body{
+    background-color: #0f111a;
+    color: #fff;
+}
+.dashboard-container{
+    display: flex;
+    height: 100vh;
+}
+.sidebar {
+  width: 60px;
+  background-color: #1a1d2a;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 0;
+  border-right: 2px solid #00aaff;
+}
+.sidebar .logo {
+  width: 30px;
+  height: 30px;
+  background-color: #ccc;
+  border-radius: 5px;
+}
+.sidebar nav ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5
+}
+.sidebar nav a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+.main-content {
+  flex: 1;
+  padding: 2rem;
+}
+.main-content h1 {
+  margin-bottom: 2rem;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.scan-card, .graph-card, .file-types-card {
+  background-color: #1a1d2a;
+  padding: 1.5rem;
+  border-radius: 1rem;
+}
+
+.scan-card .scan-icon {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.scan-card button {
+  background-color: #363949;
+  color: white;
+  border: none;
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+
+.scan-card button:hover {
+  background-color: #505468;
+}
+
+.graph-card .radar-graph {
+  height: 200px;
+  background-color: #2a2d3a;
+  border-radius: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #bbb;
+}
+
+.file-types-card .bar {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+
+.file-types-card .bar span {
+  width: 50px;
+  font-size: 0.85rem;
+}
+
+.file-types-card .progress {
+  height: 8px;
+  background-color: #00aaff;
+  border-radius: 4px;
+}
+.main-content {
+  flex: 1;
+  padding: 2rem;
+}
