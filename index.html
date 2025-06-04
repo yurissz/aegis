@@ -1,78 +1,124 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard</title>
-    <link rel="stylesheet" href="css/style.css">
+    <title> AGEIS</title>
+
+    <!-- React e ReactDOM -->
+    <script src="https://unpkg.com/react@18.2.0/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18.2.0/umd/react-dom.development.js"></script>
+
+    <!-- Babel -->
+    <script src="https://unpkg.com/@babel/standalone@7.22.20/babel.min.js"></script>
+
+    <!-- Nosso CSS -->
+    <link rel="stylesheet" href="css/registro.css">
+
+    <style>
+        /* Garantindo que o body ocupe toda a tela */
+        body {
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            background-color: #1a1d21;
+        }
+    </style>
 </head>
 
 <body>
-    <div class="dashboard-container">
-        <aside class="sidebar">
-            <div class="logo"></div>
-            <nav>
-                <ul>
-                    <li><a href="#"><img src="imagens/🦆 icon _home_ (verde).png" alt=""></a></li>
-                    <li><a href="#"><img src="imagens/🦆 icon _signal cellular 4_.png" alt=""></a></li>
-                    <li><a href="firewall.html"><img src="imagens/🦆 icon _shield alt(sem verde).png" alt=""></a></li>
-                </ul>
-            </nav>
-            <div class="user-icon">
-                <a href="#"><img src="imagens/Frame 10.png" alt=""></a>
-            </div>
-        </aside>
-        <div class="dashboar">
-            <main class="main-content">
-                <h1>Dashboard</h1>
-                <div class="cards">
-                    
-                        
-                        <div class="coluna-esque">
-                            <div class="scan-card">
-                                <div>
-                                    <img src="./assets/scan.png" alt="">
-                                    <button>Fazer Scan</button>
-                                </div>
-                                <div>
-                                    <p>Ultimo scanner: 2/03/2024 ás 17:40</p>
-                                    <p>Sem virus detectado</p>
-                                </div>
-                            </div>
-                            <div class="graph-card">
-                                
-                                <div class="radar-graph"><img src="assets/grafico.png" alt=""></div>
-                            </div>
-                                                </div>
-                        
-        
+    <div id="root"></div>
 
-                <div class="file-types-card">
-                    <h3>Tipo de arquivos escaneados no ultimo scan</h3>
-                    <div class="bar"><span>.pdf</span>
-                        <div class="progress" style="width: 40%;"></div>
+    <!-- Nosso componente React -->
+    <script type="text/babel">
+        const GetStarted = () => {
+            const [formData, setFormData] = React.useState({
+                email: '',
+                password: '',
+                confirmPassword: ''
+            });
+
+            const handleSubmit = (e) => {
+                e.preventDefault();
+                console.log('Form submitted:', formData);
+            };
+
+            // Criar strings de código binárias
+            const createBinaryString = () => {
+                const length = Math.floor(Math.random() * 4) + 2; // 2 a 5 caracteres
+                return Array.from({ length }, () =>
+                    Math.random() > 0.5 ? '1' : '0'
+                ).join('');
+            };
+
+            // Criar mais elementos para um efeito mais denso
+            const codeElements = React.useMemo(() => {
+                return Array.from({ length: 100 }, (_, index) => ({
+                    id: index,
+                    left: `${Math.random() * 100}%`,
+                    top: `${Math.random() * 100}%`,
+                    delay: Math.random() * 3,
+                    size: Math.random() * 12 + 8,
+                    opacity: Math.random() * 0.3 + 0.1,
+                    content: createBinaryString(),
+                    blur: Math.random() > 0.7 ? '1px' : '0px', // Alguns elementos com blur
+                    scale: Math.random() * 0.5 + 0.8 // Variação no tamanho
+                }));
+            }, []);
+
+            return (
+                <div className="get-started-container">
+                    <div className="left-side">
+                        <img
+                            src="assets/matrix-code.png"
+                            alt="Matrix Code"
+                            className="matrix-image"
+                        />
                     </div>
-                    <div class="bar"><span>.exe</span>
-                        <div class="progress" style="width: 75%;"></div>
-                    </div>
-                    <div class="bar"><span>.jpeg</span>
-                        <div class="progress" style="width: 60%;"></div>
-                    </div>
-                    <div class="bar"><span>.png</span>
-                        <div class="progress" style="width: 50%;"></div>
-                    </div>
-                    <div class="bar"><span>.zip</span>
-                        <div class="progress" style="width: 70%;"></div>
-                    </div>
-                    <div class="bar"><span>.txt</span>
-                        <div class="progress" style="width: 40%;"></div>
+
+                    <div className="right-side">
+                        <div className="form-container">
+                            <h1>Get Started</h1>
+
+                            <form onSubmit={handleSubmit}>
+                                <input
+                                    type="email"
+                                    placeholder="Insira seu email"
+                                    value={formData.email}
+                                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                                />
+
+                                <input
+                                    type="password"
+                                    placeholder="Insira sua senha"
+                                    value={formData.password}
+                                    onChange={(e) => setFormData({ ...formData, password: e.target.value })}
+                                />
+
+                                <input
+                                    type="password"
+                                    placeholder="Confirma sua senha"
+                                    value={formData.confirmPassword}
+                                    onChange={(e) => setFormData({ ...formData, confirmPassword: e.target.value })}
+                                />
+
+                                <button type="submit">Enviar</button>
+                            </form>
+
+                            <p className="login-link">
+                                Já tem conta? <a href="#">Entre aqui</a>
+                            </p>
+                        </div>
                     </div>
                 </div>
-        </main>
+            );
+        };
 
-    </div>
-
+        // Renderizar o componente
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(<GetStarted />);
+    </script>
 </body>
 
 </html>
