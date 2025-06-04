@@ -129,6 +129,7 @@ body {
   background-color: #ccc;
   border-radius: 5px;
 }
+
 .sidebar ul {
   list-style: none;
   display: flex;
@@ -137,9 +138,10 @@ body {
   padding: 0;
   margin: 0;
 }
-.sidebar li{
-    margin: 0;
-    padding: 0;
+
+.sidebar li {
+  margin: 0;
+  padding: 0;
 }
 
 .sidebar nav a {
@@ -255,9 +257,9 @@ body {
   gap: 3rem;
 }
 
-.status-icon img{
-    width: 100px;
-    height: auto;
+.status-icon img {
+  width: 100px;
+  height: auto;
 }
 
 .status-icon {
@@ -290,11 +292,14 @@ body {
   overflow-x: auto;
   text-align: center;
 }
-th, td{
-    text-align: center;
-    padding: 15px;
+
+th,
+td {
+  text-align: center;
+  padding: 15px;
 
 }
+
 .firewall-table table {
   width: 100%;
   border: none;
@@ -302,26 +307,29 @@ th, td{
   color: #fff;
   font-size: 0.9rem;
 }
-.text-status{
-    display: flex;
-    flex-direction: column;
-    gap: 2;
-}
-.icone-house{
-    width: 40px;
-    height: auto;
-}
-.icone-estatis{
-width: 40px;
-    height: auto;
-}
-.firewall-icone{
-width: 40px;
-    height: auto;
-}
-.listas-logos{
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
 
+.text-status {
+  display: flex;
+  flex-direction: column;
+  gap: 2;
+}
+
+.icone-house {
+  width: 40px;
+  height: auto;
+}
+
+.icone-estatis {
+  width: 40px;
+  height: auto;
+}
+
+.firewall-icone {
+  width: 40px;
+  height: auto;
+}
+
+.listas-logos {
+  display: flex;
+  flex-direction: column;
 }
