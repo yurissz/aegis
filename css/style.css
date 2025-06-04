@@ -151,6 +151,7 @@ body {
 }
 
 .main-content {
+  
   flex: 1;
   padding: 2rem;
 }
@@ -160,10 +161,15 @@ body {
 }
 
 .cards {
-  display: grid;
+  display: flex;
   grid-template-columns: 1fr 1fr 1fr;
-  gap: 1.5rem;
+  gap: 6rem;
 }
+.graph-card{
+ display: flex;
+ gap: 2rem;
+}
+
 
 .scan-card {
   display: flex;
@@ -182,6 +188,7 @@ body {
   background-color: #373945;
   padding: 1.5rem;
   border-radius: 1rem;
+  margin-left: 0;
 }
 
 .scan-card .scan-icon {
@@ -217,7 +224,7 @@ body {
 .file-types-card .bar {
   display: flex;
   align-items: center;
-  margin-bottom: 0.75rem;
+  margin-bottom: 1.20rem;
 }
 
 .file-types-card .bar span {
@@ -332,4 +339,25 @@ td {
 .listas-logos {
   display: flex;
   flex-direction: column;
+}
+.dashboard{
+  display: flex;
+  gap: 2rem;
+}
+
+.coluna-esque{
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-right: auto;
+}
+
+.radar-graph img{
+  width: 300px;
+  
+  
+}
+.radar-graph{
+  display: flex;
+  width: 500px;
 }
