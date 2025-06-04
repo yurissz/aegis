@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> AGEIS</title>
+
+    <!-- React e ReactDOM -->
+    <script src="https://unpkg.com/react@18.2.0/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18.2.0/umd/react-dom.development.js"></script>
+
+    <!-- Babel -->
+    <script src="https://unpkg.com/@babel/standalone@7.22.20/babel.min.js"></script>
+
+    <!-- Nosso CSS -->
+    <link rel="stylesheet" href="css/registro.css">
+
+    <style>
+        /* Garantindo que o body ocupe toda a tela */
+        body {
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            background-color: #1a1d21;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="root"></div>
+
+    <!-- Nosso componente React -->
+    <script type="text/babel">
+        const GetStarted = () => {
+            const [formData, setFormData] = React.useState({
+                email: '',
+                password: '',
+                confirmPassword: ''
+            });
+
+            const handleSubmit = (e) => {
+                e.preventDefault();
+                console.log('Form submitted:', formData);
+            };
+
+            // Criar strings de código binárias
+            const createBinaryString = () => {
+                const length = Math.floor(Math.random() * 4) + 2; // 2 a 5 caracteres
+                return Array.from({ length }, () =>
+                    Math.random() > 0.5 ? '1' : '0'
+                ).join('');
+            };
+
+            // Criar mais elementos para um efeito mais denso
+            const codeElements = React.useMemo(() => {
+                return Array.from({ length: 100 }, (_, index) => ({
+                    id: index,
+                    left: `${Math.random() * 100}%`,
+                    top: `${Math.random() * 100}%`,
+                    delay: Math.random() * 3,
+                    size: Math.random() * 12 + 8,
+                    opacity: Math.random() * 0.3 + 0.1,
+                    content: createBinaryString(),
+                    blur: Math.random() > 0.7 ? '1px' : '0px', // Alguns elementos com blur
+                    scale: Math.random() * 0.5 + 0.8 // Variação no tamanho
+                }));
+            }, []);
+
+            return (
+                <div className="get-started-container">
+                    <div className="left-side">
+                        <img
+                            src="assets/matrix-code.png"
+                            alt="Matrix Code"
+                            className="matrix-image"
+                        />
+                    </div>
+
+                    <div className="right-side">
+                        <div className="form-container">
+                            <h1>Get Started</h1>
+
+                            <form onSubmit={handleSubmit}>
+                                <input
+                                    type="email"
+                                    placeholder="Insira seu email"
+                                    value={formData.email}
+                                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                                />
+
+                                <input
+                                    type="password"
+                                    placeholder="Insira sua senha"
+                                    value={formData.password}
+                                    onChange={(e) => setFormData({ ...formData, password: e.target.value })}
+                                />
+
+                                <input
+                                    type="password"
+                                    placeholder="Confirma sua senha"
+                                    value={formData.confirmPassword}
+                                    onChange={(e) => setFormData({ ...formData, confirmPassword: e.target.value })}
+                                />
+
+                                <button type="submit">Enviar</button>
+                            </form>
+
+                            <p className="login-link">
+                                Já tem conta? <a href="#">Entre aqui</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            );
+        };
+
+        // Renderizar o componente
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(<GetStarted />);
+    </script>
+</body>
+
+</html>
